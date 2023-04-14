@@ -42,43 +42,60 @@
     </main>
     <script>
         //Exercise 1 - create an array of your 6 favorite things
-        
+        var arr = ["sushi", "dogs", "sleep", "salmon", "matcha", "parks"];
 
         //Exercise 2 - show your most favorite thing on the page
-        let myFavorite = document.getElementById('my-favorite');//selects the tag
-        myFavorite.innerHTML;//adds content inside the tag
+        let myFavorite = document.getElementById("my-favorite");//selects the tag
+        myFavorite.innerHTML = `<li>${arr[1]}</li>`; //adds content inside the tag
 
         //Exercise 3 - change your favorite thing and show it on the page
-        
-        myFavorite.innerHTML;
+        arr[1] = "cats";
+        myFavorite.innerHTML = `<li>${arr[1]}</li>`;
 
         //Exercise 4 - Use the length property to show the number of items in your array
         let total = document.getElementById('total');
         
-        total.innerHTML;
+        total.innerHTML = arr.length;
 
         //Exercise 5 - iterate through the array and show it on the page using the forEach() method.
         let myList = document.getElementById('all-favorites');
+        arr.forEach(function (elem) {
+            myList.innerHTML += `<li>${elem}</li>`;
+        });
         
-
-        myList.innerHTML;
+        
 
         //Exercise 6 Concatenation of arrays
         let more = document.getElementById('more-favorites');
-
-        more.innerHTML;
+        var moreFav = ["walking", "traveling"];
+        more.innerHTML = arr.concat(moreFav);
 
         //Exercise 7 push a new item to your array
         let pushed = document.getElementById('favorites-plus-one');
-
-        pushed.innerHTML;
+        let newArray = arr.push("mochi");
+        pushed.innerHTML = newArray;
 
        //Exercise 8 push a new item to your array
        
         let popped = document.getElementById('favorites-minus-one');
+        arr.pop();
         popped.innerHTML;
 
         //Exercises 9-12, practice slice(), shift(), unshift() in arrays.js
+
+        //Exercise 10 Create a nested array
+        let yourNestedArray = [
+            ["a", "b", "c"], 
+            ["d", "e", "f"],
+            ["g", "h", "i"]
+        ];
+
+        //Exercise 11
+       for (i=0; i<yourNestedArray.length; i++) {
+            for(j=0; j<yourNestedArray[i].length; j++) {
+                console.log(yourNestedArray[i][i]);
+            }
+       }
     </script>
 
 </body>
